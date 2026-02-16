@@ -1,0 +1,89 @@
+.home-page {
+
+    // background-color: grey;
+
+    .speciality {
+        overflow: hidden;
+        white-space: nowrap;
+        // background: #111111;
+        color: white;
+        padding: 10px 0;
+        // width: 400px;
+
+        .speciality-content {
+            display: inline-block;
+            padding-left: 100%;
+            animation: scroll 15s linear infinite;
+            // animation: 3s ease-in 1s infinite reverse both running slide-in;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+    }
+    
+    header {
+        background-image: url('src/assets/bg/1697243842865.jpeg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        // backdrop-filter: blur(10px);
+        // -webkit-filter: blur(2px);
+        // justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+
+        /* prevents blur edges */
+
+        // align-content: center;
+        .description {
+            // padding-left: 100px;
+            // z-index: 10;
+            max-width: 700px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.775);
+            border-radius: 8px;
+
+            p {
+                // text-justify: inter-word;
+                text-align: center;
+            }
+
+            // border: 1px solid blue;
+        }
+
+        .profile {
+            // height: 100px;
+            // padding-left: 100px;
+            // border: 1px solid red;
+
+            img {
+                // h
+                // h
+                // width: 300px;
+                width: 400px;
+                // width: 500px;
+                // max-height: 500px;
+                border-radius: 10px;
+                // max-width: 500px;
+                background-size: cover;
+            }
+        }
+    }
+
+    section {
+        margin-top: 20px;
+        // border: 1px solid red;
+    }
+}
