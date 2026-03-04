@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom"
 import { projects } from "../data";
 
-const Details = () => {
+const DetailsProject = () => {
     const params = useParams()
 
     const project = projects.find(e => e.id === params.id)
@@ -10,7 +10,8 @@ const Details = () => {
         <div className="page details-page">
             <div className="flex"
                 style={{
-                    flexWrap: 'wrap'
+                    flexWrap: 'wrap',
+                    paddingTop: 80
                 }}>
                 <div style={{
                     flex: 1,
@@ -63,7 +64,8 @@ const Details = () => {
                             maxWidth: '50vw',
                             minWidth: '500px',
                             width: '50vw',
-                            borderRadius: 20
+                            borderRadius: 20,
+                            border : '1px solid'
                         }}
                         src={project.images[0]} alt={project.name}
                     />
@@ -73,4 +75,4 @@ const Details = () => {
     )
 }
 
-export default Details
+export default DetailsProject

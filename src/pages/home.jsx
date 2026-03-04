@@ -2,10 +2,11 @@ import { collection, doc, Firestore, getDoc, getFirestore } from "firebase/fires
 import { app } from "../../firebase"
 import { useState } from "react"
 import "./css/home.scss"
-import { user, speciality, projects } from '../data.jsx'
+import { user, speciality, projects, publish } from '../data.jsx'
 import { Project } from "../components/project.jsx"
+import { Publication } from "../components/publication.jsx"
 import { Link } from "react-router-dom"
-import { ArrowRight } from "lucide-react"
+import MyButton from "../components/buttton.jsx"
 // const db = getFirestore(app)
 
 // const user = collection(db, 'user')
@@ -18,45 +19,41 @@ const Home = () => {
 
     return (
         <div className="page home-page">
-            <header>
+            <header style={{
+                paddingTop: 100,
+            }}>
                 <div className="description">
-                    <span style={{
-                        fontSize: "5vh",
-                        // fontFamily: "Orbitron",
-                    }}>
-                        {user.lname} {user.fname}
-                    </span>
-                    <p className=""
+                    <span style={{ fontSize: "5vh", color: 'var(--text-color)' }}>{user.lname} {user.fname}</span>
+                    <p className="text-[var(--text-2)]"
                         style={{
-                            // fontFamily: "Orbitron",
-                            fontSize: '3.2vh',
+                            fontSize: '16px',
                             borderRadius: 8
-                        }}
-                    >
-                        Le générateur de paragraphes IA est un outil en ligne gratuit conçu pour aider les utilisateurs à créer des paragraphes captivants, uniques et bien structurés sur n'importe quel sujet.
-                    </p>
-                    <div
-                        className="speciality"
-                        style={{
-                            marginTop: '20px',
-                            textWrap: 'nowrap',
-                            fontSize: '3vh'
                         }}>
-                        <div className="speciality-content">
-                            {
-                                speciality.map(e => (
-                                    <span
-                                        style={{
-                                            backgroundColor: "purple",
-                                            marginLeft: '10px',
-                                            padding: '2px',
-                                            borderRadius: '5px',
-                                            color: 'white'
-                                        }}>{e}
-                                    </span>
-                                ))
-                            }
-                        </div>
+                        {user.description}
+                    </p>
+                    <div className="speciality-content mt-3"
+                    style={{
+                        display :'flex',
+                        flexWrap : 'wrap',
+                        // width : '100%'
+                    }}>
+                        {
+                            speciality.map(e => (
+                                <span
+                                    style={{
+                                        backgroundColor: "var(--primary-color-reverse)",
+                                        // border: '1px solid var(--primary-color-reverse)',
+                                        marginLeft: '10px',
+                                        // marginRight: '10px',
+                                        textWrap : 'nowrap',
+                                        padding: '2px',
+                                        margin : 2,
+                                        borderRadius: '5px',
+                                        color: 'var(--box-color)'
+                                    }}> {e}
+                                </span>
+                            ))
+                        }
                     </div>
                 </div>
                 <div className="profile">
@@ -64,55 +61,56 @@ const Home = () => {
                 </div>
             </header>
 
-            <section
+            <section className="last-projects"
                 style={{
+                    display: 'flex',
                     justifyContent: 'space-around',
-                    alignItems: 'center',
                     flexWrap: 'wrap',
+                    paddingTop: 80,
+                    // borderTop: '2px solid grey'
                 }}>
                 <div style={{
                     display: 'flex',
-                    justifyContent: 'space-around'
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    flexDirection: 'column'
+                }}>
+                    <span style={{
+                        fontSize: "5vh",
+                        borderLeft: '3px solid red',
+                    }}>
+                        Last projects
+                    </span>
+
+                    <div className="flex wrap justify-center"
+                        style={{
+                            flexWrap: 'wrap',
+                        }}>
+                        <Project ID={projects[projects.length - 1].id}></Project>
+                    </div>
+                    <MyButton goTo={'/projects'} name={'See more projects'} />
+                </div>
+                <div style={{
+                    display: 'flex',
+                    justifyContent: 'space-around',
+                    alignItems: 'center',
+                    flexDirection: 'column'
                 }}>
 
                     <span
                         style={{
                             fontSize: "5vh",
-                            // fontFamily: "Orbitron",
-                        }}>Last projects
+                            borderLeft: '3px solid red'
+                        }}>
+                        Last publications
                     </span>
 
-
-                    <Link to={'projects'}
-                        style={{
-                            width: '200px',
-                            fontSize: '30px',
-                            backgroundColor: 'purple',
-                            cursor: 'pointer',
-                            borderRadius: '20px',
-                            display: 'flex',
-                            justifyContent: 'space-around',
-                            alignItems: 'center',
-                            height: '40px',
-                            margin: '20px',
-                            color: 'white'
-                        }}>
-                        <span>Voir plus</span><ArrowRight />
-                    </Link>
+                    <Publication publishID={publish[publish.length - 1].id}></Publication>
+                    <MyButton name={'See more papers'} goTo={'/publications'} />
                 </div>
 
-                <div className="flex wrap justify-center"
-                    style={{
-                        flexWrap: 'wrap',
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center'
-                    }}>
-                    {
-                        projects.map(project => (<Project projecID={project.id}></Project>))
-                    }
-                </div>
             </section>
+
         </div>
     )
 }

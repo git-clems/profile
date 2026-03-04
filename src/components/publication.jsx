@@ -1,20 +1,20 @@
 import { useState } from "react"
-import { projects, publish } from "../data"
+import { publish } from "../data"
 import { Link } from "react-router-dom"
 
-export const Project = ({ ID }) => {
+export const Publication = ({ publishID }) => {
 
-    const prjt = projects.find((e) => e.id === ID)
+    const prjt = publish.find((e) => e.id === publishID)
 
     return (
         <Link
             className="text-[var(--text-color)] 
-            hover:shadow-[0_0_15px_var(--text-2)] 
+            hover:shadow-[0_0_15px_var(--text-2)]
             shadow-[0_0_5px_var(--text-2)] 
             bg-[var(--box-color)]
             
             "
-            to={`/projects/${prjt.id}`}
+            to={`/publications/${prjt.id}`}
             style={{
                 minWidth: '300px',
                 margin: 10,
@@ -28,23 +28,19 @@ export const Project = ({ ID }) => {
                     objectFit: 'cover',
                     alignSelf: "center",
                     justifySelf: 'center',
-                    // borderRadius : '10px',
-                    borderTopLeftRadius: '10px',
-                    borderTopRightRadius: '10px'
+                    borderTopLeftRadius : '10px',
+                    borderTopRightRadius : '10px'
                 }} />
-            <div className="p-2"
+            <div className="pl-2"
                 style={{
                     textOverflow: 'ellipsis',
                     overflow: 'hidden',
                     whiteSpace: 'nowrap'
-                }}
-            >
-                {prjt.name}
+                }}>{prjt.name}</div>
+            <div className="mt-2">
+                <span className="text-[var(--text-2)] pl-5">{prjt.type} | </span>
+                <span className="text-[var(--text-2)]">{prjt.year}</span>
             </div>
-            <div className="pl-5 pb-2">
-                <span className="text-[var(--text-2)]">{prjt.startDate} - </span>
-                <span className="text-[var(--text-2)]">{prjt.endDate}</span>
-            </div>
-        </Link>
+        </Link >
     )
 }

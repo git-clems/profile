@@ -1,1 +1,36 @@
 @import "tailwindcss";
+/* @import '~bootstrap/scss/bootstrap'; */
+
+#root {
+    margin: 0;
+    padding: 0;
+}
+
+
+.dark {
+    background-color: rgb(12, 4, 29);
+    --primary-color : rgb(9, 15, 60);
+    --primary-color-reverse : rgb(143, 189, 255);
+    --background-color-1: rgb(0, 0, 0);
+    --background-color-2: rgb(0, 0, 79);
+    color: white;
+    --text-color: white;
+    --text-2 : rgba(183, 210, 249, 0.44);
+    --box-color : black;
+    --app-bar-bg : rgb(9, 15, 60)
+}
+
+.light{
+    --primary-color : rgb(143, 189, 255);
+    --app-bar-bg : rgb(255, 255, 255);
+    --primary-color-reverse : rgb(9, 15, 60);
+    background-color: rgb(255, 255, 255);
+    /* background-color: rgb(230, 230, 230); */
+    --background-color-1: rgb(255, 255, 255);
+    --background-color-2: rgb(203, 202, 202);
+    color: black;
+    --text-color: black;
+    --box-color : white;
+    --text-2 : rgb(120, 120, 120);
+    /* --primary-color : rgb(255, 255, 255); */
+} 
