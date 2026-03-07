@@ -15,70 +15,70 @@ import MyButton from "../components/buttton.jsx";
 const Home = () => {
   // const [data, setData] = useState([])
 
-    return (
-        <div className="page home-page">
-            <header style={{
-                paddingTop: 100,
+  return (
+    <div className="page home-page">
+      <header style={{
+        paddingTop: 100,
+      }}>
+        <div className="description">
+          <span style={{ fontSize: "5vh", color: 'var(--text-color)' }}>{user.lname} {user.fname}</span>
+          <p className="text-[var(--text-2)]"
+            style={{
+              fontSize: '16px',
+              borderRadius: 8
             }}>
-                <div className="description">
-                    <span style={{ fontSize: "5vh", color: 'var(--text-color)' }}>{user.lname} {user.fname}</span>
-                    <p className="text-[var(--text-2)]"
-                        style={{
-                            fontSize: '16px',
-                            borderRadius: 8
-                        }}>
-                        {user.description}
-                    </p>
-                    <div className="speciality-content mt-3"
-                    style={{
-                        display :'flex',
-                        flexWrap : 'wrap',
-                        // width : '100%'
-                    }}>
-                        {
-                            speciality.map(e => (
-                                <span
-                                    style={{
-                                        backgroundColor: "var(--primary-color-reverse)",
-                                        // border: '1px solid var(--primary-color-reverse)',
-                                        marginLeft: '10px',
-                                        // marginRight: '10px',
-                                        textWrap : 'nowrap',
-                                        padding: '2px',
-                                        margin : 2,
-                                        borderRadius: '5px',
-                                        color: 'var(--box-color)'
-                                    }}> {e}
-                                </span>
-                            ))
-                        }
-                    </div>
-                </div>
-                <div className="profile">
-                    <img src={user.images[0]} alt="" />
-                </div>
-            </header>
+            {user.description}
+          </p>
+          <div className="speciality-content mt-3"
+            style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              // width : '100%'
+            }}>
+            {
+              speciality.map(e => (
+                <span
+                  style={{
+                    backgroundColor: "var(--primary-color-reverse)",
+                    // border: '1px solid var(--primary-color-reverse)',
+                    marginLeft: '10px',
+                    // marginRight: '10px',
+                    textWrap: 'nowrap',
+                    padding: '2px',
+                    margin: 2,
+                    borderRadius: '5px',
+                    color: 'var(--box-color)'
+                  }}> {e}
+                </span>
+              ))
+            }
+          </div>
+        </div>
+        <div className="profile">
+          <img src={user.images[0]} alt="" />
+        </div>
+      </header>
 
-            <section className="last-projects"
-                style={{
-                    display: 'flex',
-                    justifyContent: 'space-around',
-                    flexWrap: 'wrap',
-                    paddingTop: 80,
-                    // borderTop: '2px solid grey'
-                }}>
-                <div style={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    flexDirection: 'column'
-                }}>
-                    <span style={{
-                        fontSize: "5vh",
-                        borderLeft: '3px solid red',
-                    }}>
-                        Last projects
-                    </span>
+      <section className="last-projects-publications"
+        style={{
+          display: 'flex',
+          justifyContent: 'space-around',
+          flexWrap: 'wrap',
+          paddingTop: 80,
+          // borderTop: '2px solid grey'
+        }}>
+        <div style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          flexDirection: 'column'
+        }}>
+          <span style={{
+            fontSize: "5vh",
+            borderLeft: '3px solid red',
+          }}>
+            Last projects
+          </span>
 
           <div
             className="flex wrap justify-center"
