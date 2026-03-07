@@ -1,6 +1,6 @@
 import { Link, NavLink } from "react-router-dom"
 import './css/appbar.scss'
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { user } from "../data"
 
 const AppBar = () => {

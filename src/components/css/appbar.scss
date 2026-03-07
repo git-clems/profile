@@ -4,7 +4,7 @@
     width: 100%;
     display: flex;
     align-items: center;
-    padding: 15px;
+    // padding: 15px;
     position: fixed;
     background-color: var(--app-bar-bg);
     // background-color: var(--primary-color);
@@ -62,7 +62,7 @@
     .more {
         background-color: var(--primary-color);
         height: 45px;
-        width: 20vw;
+        // width: 20vw;
         max-width: 200px;
         display: flex;
         justify-content: space-around;

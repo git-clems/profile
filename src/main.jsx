@@ -8,7 +8,4 @@ createRoot(document.getElementById('root')).render(
   <HashRouter>
     <App />
   </HashRouter>
-  // <BrowserRouter>
-  //   <App></App>
-  // </BrowserRouter>
 )
