@@ -21,7 +21,7 @@ const Home = () => {
         paddingTop: 100,
       }}>
         <div className="description">
-          <span style={{ fontSize: "5vh", color: 'var(--text-color)' }}>{user.lname} {user.fname}</span>
+          <span className="user-name" style={{ color: 'var(--text-color)' }}>{user.lname} {user.fname}</span>
           <p className="text-[var(--text-2)]"
             style={{
               fontSize: '16px',

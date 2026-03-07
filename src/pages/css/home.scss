@@ -1,5 +1,5 @@
 .home-page {
-    
+
     header {
         display: flex;
         flex-wrap: wrap;
@@ -15,10 +15,15 @@
             border: 1px solid var(--text-2);
             border-radius: 8px;
             padding: 10px;
+
+            .user-name {
+                font-size: 30px;
+            }
         }
 
         .profile {
             margin: 10px;
+
             img {
                 width: 300px;
                 border-radius: 20px;
@@ -38,14 +43,16 @@
             flex-direction: column;
 
 
-            .use-name {
-                font-size: 25px;
-                transition: 0.2s;
-            }
 
             .description {
                 transition: 0.2s;
                 max-width: 90vw;
+
+
+                .user-name {
+                    font-size: 25px;
+                    transition: 0.2s;
+                }
 
                 .speciality-content {
                     font-size: 14px;
