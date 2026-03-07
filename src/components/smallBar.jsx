@@ -8,20 +8,14 @@ const SmallBar = () => {
   const [theme, setTheme] = useState(
     localStorage.getItem("theme") ? localStorage.getItem("theme") : "light",
   );
-  const [language, setLanguage] = useState(
-    localStorage.getItem("language")
-      ? localStorage.getItem("language")
-      : "french",
-  );
 
   localStorage.setItem("theme", theme);
-  localStorage.setItem("language", language);
 
   window.addEventListener("scroll", () => {
     const topPosition = document
       .querySelector(".page")
       .getBoundingClientRect().top;
-    const appBar = document.querySelector(".appbar");
+    const appBar = document.querySelector(".small-bar");
     if (topPosition < 0) {
       appBar.style.boxShadow = "5px 5px 5px var(--text-2)";
     } else {
