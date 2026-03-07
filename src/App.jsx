@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './App.css'
 import AppBar from './components/appbar'
 import { Route, Routes } from 'react-router-dom'
@@ -11,12 +10,14 @@ import DetailsProject from './pages/detailProject'
 import DetailsPublication from './pages/detailPublication'
 import Publications from './pages/publications'
 import ScrollToTop from './components/goTop'
+import SmallBar from './components/smallBar'
 
 function App() {
 
   return (
     <>
       <AppBar></AppBar>
+      <SmallBar></SmallBar>
       <ScrollToTop></ScrollToTop>
       <Routes>
         <Route path='' element={<Home></Home>}></Route>
