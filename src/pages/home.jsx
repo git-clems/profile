@@ -19,35 +19,23 @@ const Home = () => {
 
     return (
         <div className="page home-page">
-            <header style={{
-                paddingTop: 100,
-            }}>
-                <div className="description">
+            <header style={{ paddingTop: 100, }}>
+                <div className="description m-5">
                     <span style={{ fontSize: "5vh", color: 'var(--text-color)' }}>{user.lname} {user.fname}</span>
-                    <p className="text-[var(--text-2)]"
-                        style={{
-                            fontSize: '16px',
-                            borderRadius: 8
-                        }}>
+                    <p className="text-[var(--text-2)]" style={{ fontSize: '16px', borderRadius: 8 }}>
                         {user.description}
                     </p>
                     <div className="speciality-content mt-3"
-                    style={{
-                        display :'flex',
-                        flexWrap : 'wrap',
-                        // width : '100%'
-                    }}>
+                        style={{ display: 'flex', flexWrap: 'wrap' }}>
                         {
                             speciality.map(e => (
                                 <span
                                     style={{
                                         backgroundColor: "var(--primary-color-reverse)",
-                                        // border: '1px solid var(--primary-color-reverse)',
                                         marginLeft: '10px',
-                                        // marginRight: '10px',
-                                        textWrap : 'nowrap',
+                                        textWrap: 'nowrap',
                                         padding: '2px',
-                                        margin : 2,
+                                        margin: 2,
                                         borderRadius: '5px',
                                         color: 'var(--box-color)'
                                     }}> {e}
@@ -61,7 +49,7 @@ const Home = () => {
                 </div>
             </header>
 
-            <section className="last-projects"
+            <section
                 style={{
                     display: 'flex',
                     justifyContent: 'space-around',
