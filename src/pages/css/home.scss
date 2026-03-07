@@ -7,14 +7,11 @@
         align-items: center;
 
         .description {
-            max-width: 90vw;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            border: 1px solid var(--text-2);
-            border-radius: 8px;
+            flex: 1;
+            border: 5px solid var(--text-2);
+            border-radius: 10px;
             padding: 10px;
+            margin: 10px;
 
             .user-name {
                 font-size: 30px;
@@ -24,8 +21,8 @@
         .profile {
             margin: 10px;
 
+            width: 300px;
             img {
-                width: 300px;
                 border-radius: 20px;
                 background-color: rgba(246, 246, 246, 0.979);
                 background-size: cover;
@@ -37,12 +34,9 @@
 
 @media screen and (max-width: 600px) {
     .home-page {
-        // padding-top: 0;
 
         header {
-            flex-direction: column;
-
-
+            // flex-direction: column;
 
             .description {
                 transition: 0.2s;
