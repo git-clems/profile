@@ -19,7 +19,7 @@ const Home = () => {
     <div className="page home-page">
       <header>
         <div className="description">
-          <span style={{ fontSize: "5vh", color: "var(--text-color)" }}>
+          <span className = 'use-name' style={{ color: "var(--text-color)" }}>
             {user.lname} {user.fname}
           </span>
           <p
@@ -62,7 +62,7 @@ const Home = () => {
       </header>
 
       <section
-        className="last-projects"
+        className="last-projects-publications"
         style={{
           display: "flex",
           justifyContent: "space-around",
@@ -71,7 +71,7 @@ const Home = () => {
           // borderTop: '2px solid grey'
         }}
       >
-        <div
+        <div className="last-projects"
           style={{
             display: "flex",
             justifyContent: "center",
@@ -98,7 +98,7 @@ const Home = () => {
           </div>
           <MyButton goTo={"/projects"} name={"See more projects"} />
         </div>
-        <div
+        <div className="last-publications"
           style={{
             display: "flex",
             justifyContent: "space-around",

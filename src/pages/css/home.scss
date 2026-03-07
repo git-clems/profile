@@ -8,6 +8,11 @@
         justify-content: space-around;
         align-items: center;
 
+
+        .use-name {
+            font-size: 30px;
+        }
+
         .description {
             max-width: 60vw;
             display: flex;
@@ -39,8 +44,21 @@
         header {
             flex-direction: column;
 
+
+            .use-name {
+                font-size: 25px;
+                transition: 0.2s;
+            }
+
             .description {
+                transition: 0.2s;
                 max-width: 90vw;
+
+                .speciality-content {
+                    font-size: 14px;
+                    transition: 0.2s;
+                }
+
             }
 
             .profile {
@@ -49,6 +67,12 @@
                 img {
                     width: 100%;
                 }
+            }
+        }
+
+        .last-projects-publications {
+            .last-publications {
+                margin-top: 50px;
             }
         }
     }
