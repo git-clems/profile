@@ -16,7 +16,7 @@ const DetailsProject = () => {
                 <div style={{
                     flex: 1,
                     border: '1px solid grey',
-                    borderRadius: 20,
+                    borderRadius: 10,
                     minWidth: '500px',
                     margin: '5px',
                 }}>
@@ -64,7 +64,7 @@ const DetailsProject = () => {
                             maxWidth: '50vw',
                             minWidth: '500px',
                             width: '50vw',
-                            borderRadius: 20,
+                            borderRadius: 10,
                             border : '1px solid'
                         }}
                         src={project.images[0]} alt={project.name}

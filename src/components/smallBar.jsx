@@ -12,12 +12,10 @@ const SmallBar = () => {
   localStorage.setItem("theme", theme);
 
   window.addEventListener("scroll", () => {
-    const topPosition = document
-      .querySelector(".page")
-      .getBoundingClientRect().top;
+    const topPosition = document.querySelector(".page").getBoundingClientRect().top;
     const appBar = document.querySelector(".small-bar");
     if (topPosition < 0) {
-      appBar.style.boxShadow = "5px 5px 5px var(--text-2)";
+      appBar.style.borderBottom = '4px solid var(--text-2)'
     } else {
       appBar.style.boxShadow = "";
     }

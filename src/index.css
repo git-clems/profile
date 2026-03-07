@@ -17,7 +17,9 @@
     --text-color: white;
     --text-2 : rgb(202, 202, 202);
     --box-color : black;
-    --app-bar-bg : rgb(9, 15, 60)
+    /* --app-bar-bg : rgb(9, 15, 60) */
+    --app-bar-bg : rgb(1, 12, 52);
+
 }
 
 .light{
