@@ -24,7 +24,7 @@
 
 .light{
     --primary-color : rgb(143, 189, 255);
-    --app-bar-bg : rgb(255, 255, 255);
+    --app-bar-bg : rgb(229, 229, 229);
     --primary-color-reverse : rgb(9, 15, 60);
     background-color: rgb(255, 255, 255);
     /* background-color: rgb(230, 230, 230); */

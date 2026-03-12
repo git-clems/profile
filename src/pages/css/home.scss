@@ -39,7 +39,7 @@
 
             .description {
                 transition: 0.2s;
-                max-width: 90vw;
+                width: 100vw;
 
 
                 .user-name {
@@ -55,11 +55,8 @@
             }
 
             .profile {
-                // width: 60vw;
-                // display: none;
-                // flex: 1;
                 width: 100vw;
-                margin: 16px;
+                margin: 10px;
 
                 img {
                     width: 100%;

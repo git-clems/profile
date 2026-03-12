@@ -25,7 +25,7 @@ export const projects = [
     {
         id: 'z6cq64ce',
         name: 'Last mile dashbord',
-        description: '',
+        description: "Pour un bon suivi des performances d'une activité, les tableaux de bords dynamiques paraissent très adéquats dans le sens où ils offrent une vue aussi bien macroscopique que détaillée.",
         images: [
             'https://ik.imagekit.io/ejxp4lffuk/works/ExpGlobale.png?updatedAt=1764885506166',
         ],
@@ -37,13 +37,14 @@ export const projects = [
     {
         id: '64rv88fe',
         name: 'Centralized information system for clinical structure',
-        description: '',
         images: [
             'https://ik.imagekit.io/ejxp4lffuk/works/VueAdmin.PNG?updatedAt=1764885505365',
         ],
-        startDate: '2023',
-        endDate: '2024',
-        location: 'CEOS Technology'
+        startDate: '2022',
+        endDate: '2023',
+        location: 'CEOS Technology',
+        tools : ['PL-SQL', 'Oracle APEX'],
+        description : "Les systèmes d'information font aujourd'hui parti des supports importants pour la communication, le partage de fichiers, la planification ou le reporting dans les entreprises. Un bon système d'information permet de mieux communiquer et suivre les activités. Ce projet a été l'occasion pour moi et mon équipe lors d'un projet académique de développer un SI centralisé en prenant comme contexte la communication au sein d’un réseaux de cliniques vétérinaires."
     }
 ]
 

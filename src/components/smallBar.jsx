@@ -11,15 +11,6 @@ const SmallBar = () => {
 
   localStorage.setItem("theme", theme);
 
-  window.addEventListener("scroll", () => {
-    const topPosition = document.querySelector(".page").getBoundingClientRect().top;
-    const appBar = document.querySelector(".small-bar");
-    if (topPosition < 0) {
-      appBar.style.borderBottom = '4px solid var(--text-2)'
-    } else {
-      appBar.style.boxShadow = "";
-    }
-  });
 
   const app = document.getElementById("root");
 
@@ -148,24 +139,8 @@ const SmallBar = () => {
                   }
                 }}
               >
-                {theme === "light" ? (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="lucide lucide-moon-star-icon lucide-moon-star"
-                  >
-                    <path d="M18 5h4" />
-                    <path d="M20 3v4" />
-                    <path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401" />
-                  </svg>
-                ) : (
+                {theme === "light" ?
+
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -187,8 +162,24 @@ const SmallBar = () => {
                     <path d="M20 12h2" />
                     <path d="m6.34 17.66-1.41 1.41" />
                     <path d="m19.07 4.93-1.41 1.41" />
+                  </svg> :
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-moon-star-icon lucide-moon-star"
+                  >
+                    <path d="M18 5h4" />
+                    <path d="M20 3v4" />
+                    <path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401" />
                   </svg>
-                )}
+                }
               </button>
             </div>
           </div>
