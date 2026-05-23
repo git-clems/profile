@@ -35,4 +35,8 @@
     --box-color : white;
     --text-2 : rgb(120, 120, 120);
     /* --primary-color : rgb(255, 255, 255); */
-} 
+}
+
+.page {
+    min-height: 100vh;
+}

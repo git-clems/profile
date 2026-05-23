@@ -29,8 +29,8 @@ export const projects = [
         images: [
             'https://ik.imagekit.io/ejxp4lffuk/works/ExpGlobale.png?updatedAt=1764885506166',
         ],
-        startDate: '2023',
-        endDate: '2023',
+        startDate: 2023,
+        endDate: 2023,
         location: 'CEOS Technology',
         tools : ['Laravel', 'SQL', 'Chart JS', 'Ajax']
     },
@@ -40,8 +40,8 @@ export const projects = [
         images: [
             'https://ik.imagekit.io/ejxp4lffuk/works/VueAdmin.PNG?updatedAt=1764885505365',
         ],
-        startDate: '2022',
-        endDate: '2023',
+        startDate: 2022,
+        endDate: 2023,
         location: 'CEOS Technology',
         tools : ['PL-SQL', 'Oracle APEX'],
         description : "Les systèmes d'information font aujourd'hui parti des supports importants pour la communication, le partage de fichiers, la planification ou le reporting dans les entreprises. Un bon système d'information permet de mieux communiquer et suivre les activités. Ce projet a été l'occasion pour moi et mon équipe lors d'un projet académique de développer un SI centralisé en prenant comme contexte la communication au sein d’un réseaux de cliniques vétérinaires."
@@ -57,6 +57,7 @@ export const publish = [
         type : 'Article',
         link : 'https://pdf.sciencedirectassets.com/271868/1-s2.0-S0045782525X00141/1-s2.0-S0045782525006656/main.pdf?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJ3%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIQCOBMFxJHdkU36SorKPht5XUPcXT7%2Fj1qJOQxSMvd4g0wIgTQDmywirD1G0YMjLgJoDXgMkaQCdxohA7ycYJnnvVNwqswUIZhAFGgwwNTkwMDM1NDY4NjUiDMjv2X388OnM5eFTqSqQBSw7NDbZMIsiJVA4%2FoWBRIiuABH0H3kVxm0LC3LKiHZizYTyzJ8O%2BpYGZq7jgfTXHtvYF2Wu2mg6zzOONFhlLHUTkkxsnW2UEIE4lZQcLuOJhnClvOo8MaAQHYCMmk2o2FGEWeeuNQgS5Q4BK1YPg5CmpLQsEniblIDNjuoRN4nukPH%2B120WDjckLWth86hqE805TO5HKsnABXzhbZFeF7H8V81CKsph7Q0vtooMq2WKEawCbXLdqSr5qjoYkCg2Iqs1rpUoMiKNCYaY5iqItc1rg6a%2FxRqzB1VwVjK%2FRk3eNWKczVLMSWo%2F7wscUaNfZk%2F5UCMUyQUovGfk1uY5P1mmxXMBFk1AKqwr4utDyPeAcSMRudMC0iQufb3i%2BEInnVH8O5%2FDjqgq23exB9zCUy04%2BjlFYJ02RzmQds8VyzIu0eZsPdM3akg6QNW%2FBhD7A0R3XVQy0E8a9RkH%2FXWiKr8f0LMQYnFmKy0DIZU%2FsFkGlnKhASyHBOQAIG8VlCTZDdBNYwGWbpWD1Bc98%2BZZsWqssFo4%2FgeockKefpFC%2FGr3e2a%2Fkb%2BTSXB7%2BxzFedByEsnI%2B1STbBAawyuVCJQSrCE7aa29l6PFNDREiCQ2DvsJh0R%2FO2mZuqXc8X4rBeeYzpXABcKxMOflvHl%2FwC8PkK44EvbLNuNTXkzShx4VPRtebHTt4WDuAY3fcZ77Gnwvo22bytk%2Fjfs8Ovq1OcUYfi1QtsW1TBH0zib%2Bl40zIcl4bWAdnJRAGtlVFu7S7TOOM9Pxnu8kOw8Qyjwy%2F8HbGppGJoq2CIP88dIgNnXwXPR4Ch4VbPRLsveS2toxL7MYgmJQcIN2L%2F50fA3Z0HQ%2B1M13lyYh9ydfA6hxYamXPOTgMJPm1swGOrEBWN00NXOCajI31c9yj8QdeycY%2FQjZxRuOlqAlMOQQJcw6mLH2t6XZ8t9lobhA2PGAyObWEkWzU57thEuOn2HK4h1fdw1%2BgSsAZhDm7444VH8PhVIVEjzNvpmsKYw2oWWLy9K2xRVQONvMF7TaCe2uOCRokFCt9A9vk2XUdgx0JQAo001OXgTJzrk8d83HBFK8i05Xy7HCrJGrAio25cIQeNUjeYzGGyYFkyRiBo5gXR2N&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20260218T134018Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Credential=ASIAQ3PHCVTYYV442Y2R%2F20260218%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=37dea6cccd7acae33d8956631f9702cf6b260a5f38301959aeab2400e750f011&hash=c33573fdddcc2d461a3c5ba6de3f4040e5e068d07eea2bb6174ad45f7b1be967&host=68042c943591013ac2b2430a89b270f6af2c76d8dfd086a07176afe7c76c2c61&pii=S0045782525006656&tid=spdf-0bb4ebe6-682c-4a1e-9454-dc43335eb6f7&sid=4b1884298d982645fd387e98366a53873badgxrqb&type=client&tsoh=d3d3LnNjaWVuY2VkaXJlY3QuY29t&rh=d3d3LnNjaWVuY2VkaXJlY3QuY29t&ua=00125602020a0a075105&rr=9cfdef7d1eb5f108&cc=fr',
         images : ['https://ik.imagekit.io/ejxp4lffuk/works/Capture%20d_%C3%A9cran%202026-02-18%20132541.png'],
+        description : "This project studies sustainable fertilizer planning under carbon regulations. It develops stochastic optimization models and learning-based algorithms to help farmers balance production costs, emissions, and carbon trading decisions, providing decision-support tools for policymakers and stakeholders in low-emission agriculture.",
         collaboration : [
             {
                 name : 'Mustapha OUDANI',

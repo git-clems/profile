@@ -12,23 +12,9 @@ const Projects = () => {
                 <div style={{
                     display: 'flex',
                     flexWrap: 'wrap',
-                    justifyContent :'space-evenly'
+                    justifyContent: 'space-evenly'
                 }}>
-                    {
-                        projects.map(project => (
-                            <Project ID={project.id} />
-                        ))
-                    }
-                    {
-                        projects.map(project => (
-                            <Project ID={project.id} />
-                        ))
-                    }
-                    {
-                        projects.map(project => (
-                            <Project ID={project.id} />
-                        ))
-                    }
+                    {projects.map(project => (<Project ID={project.id} />))}
                 </div>
             </div>
         </div>

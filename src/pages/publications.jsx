@@ -17,11 +17,6 @@ const Publications = () => {
                     // border: '2px solid grey'
                 }}>
                     {publish.map(project => (<Publication publishID={project.id} />))}
-                    {publish.map(project => (<Publication publishID={project.id} />))}
-                    {publish.map(project => (<Publication publishID={project.id} />))}
-                    {publish.map(project => (<Publication publishID={project.id} />))}
-                    {publish.map(project => (<Publication publishID={project.id} />))}
-                    {publish.map(project => (<Publication publishID={project.id} />))}
                 </div>
             </div>
         </div>
