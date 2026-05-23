@@ -2,10 +2,40 @@ import { Link, useParams } from "react-router-dom"
 import { publish } from "../data";
 import { Download, Eye } from "lucide-react";
 import "./css/details-page.scss"
+import { useEffect } from "react";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../auth/firebase";
+import Loading from "../components/loadingPage";
 
-const DetailsPublication = () => {
+const DetailsPaper = () => {
+
     const params = useParams()
-    const paper = publish.find(e => e.id === params.id)
+    const [paper, setPaper] = useState()
+    const [loading, setLoading] = useState(false)
+
+    useEffect(() => {
+        const fetchData = async () => {
+            setLoading(true)
+            try {
+                const querry = getDoc(doc(db, 'paper', paperID))
+                if (querry.exist()) {
+                    setPaper({ id: querry.id, ...querry.data() })
+                } else {
+                    setPaper(null)
+                    return
+                }
+            } catch (error) {
+                return
+            } finally {
+                setLoading(false)
+            }
+        }
+
+        fetchData()
+    }, [])
+
+    if (loading) return <Loading></Loading>
+    if (!paper) return
 
     return (
         <div className="page details-page">
@@ -30,13 +60,13 @@ const DetailsPublication = () => {
                                 fontSize: '2vh',
                                 borderRadius: '7px',
                                 display: 'flex',
-                                width : "max-content",
+                                width: "max-content",
                                 justifyContent: 'center',
                                 alignItems: 'center',
                                 // paddingLeft: 4,
                                 // paddingRight: 4,
                             }}>
-                            <span style={{textWrap : "nowrap"}}>See the paper</span>
+                            <span style={{ textWrap: "nowrap" }}>See the paper</span>
                             <Eye className="ml-4"></Eye>
                         </a>
                     </div>
@@ -60,4 +90,4 @@ const DetailsPublication = () => {
     )
 }
 
-export default DetailsPublication
+export default DetailsPaper

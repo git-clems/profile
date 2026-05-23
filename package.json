@@ -13,7 +13,7 @@
     "@fortawesome/react-fontawesome": "^3.1.1",
     "@tailwindcss/vite": "^4.1.18",
     "bootstrap": "^5.3.8",
-    "firebase": "^12.8.0",
+    "firebase": "^12.13.0",
     "leaflet": "^1.9.4",
     "lucide": "^0.562.0",
     "lucide-react": "^0.564.0",
