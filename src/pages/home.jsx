@@ -55,7 +55,7 @@ const Home = () => {
     <div className="page home-page">
       <header>
         <div className="description">
-          <span className="user-name" style={{ color: 'var(--text-color)' }}>{user?.lname} {user?.fname}</span>
+          <span className="user-name text-[var(--text-color)] font-bold" >{user?.lname} {user?.fname}</span>
           <p className="text-[var(--text-2)] rounded">{user?.description}</p>
           <div className="speciality-content mt-3 flex flex-wrap">
             {specialities?.map(speciality => (<span className="bg-[var(--primary-color-reverse)] ml-4 text-nowrap p-2 m-2 rounded text-[var(--box-color)]"> {speciality.name}</span>))}
@@ -67,20 +67,26 @@ const Home = () => {
         </div>
       </header>
 
-      <section className="last-projects-publications flex justify-around flex-wrap pt-4">
-        <div className="flex justify-center items-center flex-col">
-          <span className="border-l-3 border-red-500 text-4xl">Last projects</span>
-          <Project projectID={projects[projects?.length - 1]?.id}></Project>
-          <MyButton goTo={"/projects"} name={"See more projects"} />
-        </div>
+      <section className="last-projects-papiers flex flex-wrap pt-4">
+        {
+          projects.length > 0 &&
+          <div className="flex justify-center items-center flex-col">
+            <span className="border-l-3 border-red-500 text-4xl mb-2">Last projects</span>
+            <Project projectID={projects[projects?.length - 1]?.id}></Project>
+            <MyButton goTo={"/projects"} name={"See more projects"} />
+          </div>
+        }
 
-        <div className="last-publications">
-          <span className="border-l-3 border-red-500 text-4xl">Last papers</span>
-          <Paper publishID={papers[papers?.length - 1]?.id}></Paper>
-          <MyButton name={"See more papers"} goTo={"/publications"} />
-        </div>
-      </section>
-    </div>
+        {
+          papers.length > 0 &&
+          < div className="flex justify-center items-center flex-col ml-4">
+            <span className="border-l-3 border-red-500 text-4xl mb-2">Last papers</span>
+            <Paper paperID={papers[papers?.length - 1]?.id}></Paper>
+            <MyButton name={"See more papers"} goTo={"/papiers"} />
+          </div>
+        }
+      </section >
+    </div >
   );
 };
 

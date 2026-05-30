@@ -18,7 +18,6 @@
     --text-color: white;
     --text-2: rgb(202, 202, 202);
     --box-color: black;
-    /* --app-bar-bg : rgb(9, 15, 60) */
     --app-bar-bg: rgb(1, 12, 52);
 }
 
@@ -27,7 +26,6 @@
     --app-bar-bg: rgb(229, 229, 229);
     --primary-color-reverse: rgb(9, 15, 60);
     background-color: rgb(255, 255, 255);
-    /* background-color: rgb(230, 230, 230); */
     --background-color-1: rgb(255, 255, 255);
     --background-color-2: rgb(203, 202, 202);
     color: black;

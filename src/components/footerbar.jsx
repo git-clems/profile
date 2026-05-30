@@ -1,8 +1,40 @@
 import { Copyright, Linkedin, Locate, MapPin } from "lucide-react"
-import { user, web } from "../data"
+import { web } from "../data"
 import { Link } from "react-router-dom"
+import { collection, getDocs } from "firebase/firestore"
+import { db } from "../auth/firebase"
+import { useEffect, useState } from "react"
 
 export const FooterBar = () => {
+
+    const [user, setUser] = useState()
+    const [loading, setLoading] = useState(false)
+
+
+    useEffect(() => {
+        const fectData = async () => {
+            setLoading(true)
+            try {
+                const snap = await getDocs(collection(db, "user"))
+                const data = snap.docs.map(doc => ({
+                    _id: doc.id,
+                    ...doc.data()
+                }))
+
+                setUser(data[0])
+
+            } catch (error) {
+                return
+            } finally {
+                setLoading(false)
+            }
+        }
+
+        fectData()
+    }, [])
+
+    if (!user) return
+
     return (
         <footer className='flex justify-between flex-wrap'
             style={{

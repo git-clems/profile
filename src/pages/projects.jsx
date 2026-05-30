@@ -36,7 +36,7 @@ const Projects = () => {
 
     if (loading) return <Loading></Loading>
     if (!projects) return null
-    if(projects.length === 0) return <Page404 message={'Aucun projet'}></Page404>
+    if(projects.length === 0) return <Page404 message={'No project to display here'}></Page404>
 
     return (
         <div className="page projects-page" >

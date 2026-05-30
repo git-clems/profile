@@ -6,8 +6,6 @@ import Loading from "../components/loadingPage"
 import Page404 from "./404"
 
 const Papers = () => {
-
-
     const [papers, setPapers] = useState()
     const [loading, setLoading] = useState(false)
 
@@ -21,7 +19,7 @@ const Papers = () => {
                     ...doc.data()
                 }))
                 setPapers(data)
-
+                
             } catch (error) {
                 return
             } finally {
@@ -37,23 +35,14 @@ const Papers = () => {
 
     if (loading) return <Loading></Loading>
     if (!papers) return null
-    if (papers.length === 0) return <Page404 message={'Aucun paper enregistré'}></Page404>
+    if(papers.length === 0) return <Page404 message={'No paper to display here'}></Page404>
 
     return (
-        <div className="page papers-page">
-            <div style={{
-                paddingTop: 80
-            }}>
-
-                <h1 style={{ fontSize: 30 }}>Mes paper</h1>
-                <div style={{
-                    display: 'flex',
-                    flexWrap: 'wrap',
-                    borderRadius: 10,
-                    justifyContent: 'space-around',
-                    // border: '2px solid grey'
-                }}>
-                    {papers.map(paper => (<Paper key={paper.id} paperID={paper.id} />))}
+        <div className="page papers-page" >
+            <div>
+                <div className="text-xl font-bold m-4">My papers</div>
+                <div className="flex flex-wrap">
+                    {papers.map(paper => (<Paper key={paper?.id} paperID={paper.id} />))}
                 </div>
             </div>
         </div>

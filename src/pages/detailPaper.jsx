@@ -2,7 +2,7 @@ import { Link, useParams } from "react-router-dom"
 import { publish } from "../data";
 import { Download, Eye } from "lucide-react";
 import "./css/details-page.scss"
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../auth/firebase";
 import Loading from "../components/loadingPage";
@@ -17,7 +17,7 @@ const DetailsPaper = () => {
         const fetchData = async () => {
             setLoading(true)
             try {
-                const querry = getDoc(doc(db, 'paper', paperID))
+                const querry = await getDoc(doc(db, 'paper', paperID))
                 if (querry.exist()) {
                     setPaper({ id: querry.id, ...querry.data() })
                 } else {
@@ -45,16 +45,16 @@ const DetailsPaper = () => {
                     paddingTop: 80,
                 }}>
                 <div className="description">
-                    <h1 className="name">{paper.name}</h1>
-                    <p>{paper.description}</p>
+                    <h1 className="name">{paper?.name}</h1>
+                    <p>{paper?.description}</p>
                     <div className="flex justify-between mt-5">
                         <div>
-                            {paper.type && <span> {paper.type} |</span>}
-                            <span> Published: {paper.year}</span>
+                            {paper?.type && <span> {paper?.type} |</span>}
+                            <span> Published: {paper?.year}</span>
                         </div>
                         <a className="text-[white] hover:text-[var(--text-color)] bg-[var(--primary-color)] hover:bg-[transparent]"
-                            href={paper.link}
-                            download={paper.link}
+                            href={paper?.link}
+                            download={paper?.link}
                             style={{
                                 border: '4px solid var(--primary-color)',
                                 fontSize: '2vh',
@@ -82,7 +82,7 @@ const DetailsPaper = () => {
                             borderRadius: 7,
                             border: '1px solid'
                         }}
-                        src={paper.images[0]} alt={paper.name}
+                        src={paper?.images[0]} alt={paper?.name}
                     />
                 </div>
             </div>

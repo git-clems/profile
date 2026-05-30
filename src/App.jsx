@@ -26,10 +26,10 @@ function App() {
         <Route path='' element={<Home></Home>}></Route>
         <Route path='/*' element={<Page404 />}></Route>
         <Route path='projects' element={<Projects></Projects>}></Route>
-        <Route path='publications' element={<Papers></Papers>}></Route>
+        <Route path='papiers' element={<Papers></Papers>}></Route>
         <Route path='about-me' element={<About></About>}></Route>
         <Route path='projects/:id' element={<DetailsProject></DetailsProject>}></Route>
-        <Route path='publications/:id' element={<DetailsPublication></DetailsPublication>}></Route>
+        <Route path='papiers/:id' element={<DetailsPublication></DetailsPublication>}></Route>
         <Route path='contact' element={<Contact></Contact>}></Route>
         <Route path='admin' element={<Admin></Admin>}></Route>
         <Route path='admin/messagerie' element={<AdminContacts></AdminContacts>}></Route>

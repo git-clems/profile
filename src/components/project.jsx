@@ -61,7 +61,7 @@ export const Project = ({ projectID }) => {
             className="text-[var(--text-color)] 
             hover:shadow-[0_0_15px_var(--text-2)] 
             shadow-[0_0_5px_var(--text-2)] 
-            bg-[var(--box-color)] rounded min-w-[23vw] max-w-[300px] m-2"
+            bg-[var(--box-color)] rounded overflow-hidden min-w-[23vw] max-w-[300px] m-2"
             to={`/projects/${project?.id}`}>
             <img src={project?.image} alt=""
                 style={{
@@ -74,13 +74,7 @@ export const Project = ({ projectID }) => {
                     borderTopLeftRadius: '10px',
                     borderTopRightRadius: '10px'
                 }} />
-            <div className="p-2 line-clamp-1"
-                style={{
-                    textOverflow: 'ellipsis',
-                    overflow: 'hidden',
-                    whiteSpace: 'nowrap'
-                }}
-            >
+            <div className="p-2 line-clamp-1">
                 {project?.name}
             </div>
             <div className="pl-2 pb-2">

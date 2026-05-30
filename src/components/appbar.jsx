@@ -3,6 +3,7 @@ import './css/appbar.scss'
 import { useEffect, useState } from "react"
 import { collection, getDocs } from "firebase/firestore"
 import Loading from "./loadingPage"
+import { db } from "../auth/firebase"
 // import { user } from "../data"
 
 const AppBar = () => {
@@ -19,13 +20,14 @@ const AppBar = () => {
             try {
                 const snap = await getDocs(collection(db, "user"))
                 const data = snap.docs.map(doc => ({
-                    _id: doc.id,
+                    id: doc.id,
                     ...doc.data()
-                }))
-
+                }))                
                 setUser(data[0])
 
             } catch (error) {
+                console.log(error);
+                
                 return
             }finally {
                 setLoading(false)
@@ -34,6 +36,9 @@ const AppBar = () => {
 
         fectData()
     }, [])
+
+    // console.log(user);
+    
 
 
     const [showAppBar, setShowAppBar] = useState(true);
@@ -82,12 +87,13 @@ const AppBar = () => {
     }, [lastScrollY]);
 
     if(loading) return <Loading></Loading>
+    if(!user) return
 
     return (
         // <div className="appbar shadow-[0_0_15px_rgba(0,0,0,0.5)]">
 
         <div className={`
-        appbar fixed top-0 left-0 h-[80px] bg-white z-50 
+        appbar fixed top-0 left-0 h-[80px] z-50 
         
         select-none
         transition-all duration-300
@@ -104,7 +110,7 @@ const AppBar = () => {
             <div className='nav-container'>
                 <NavLink to={'/'} className='nav-element'>Home</NavLink>
                 <NavLink to={'/projects'} className='nav-element'>Projects</NavLink>
-                <NavLink to={'/publications'} className='nav-element'>Publications</NavLink>
+                <NavLink to={'/papiers'} className='nav-element'>Publications</NavLink>
                 <NavLink to={'/about-me'} className='nav-element'>About</NavLink>
                 <NavLink to={'/contact'} className='nav-element'>Contact</NavLink>
             </div>

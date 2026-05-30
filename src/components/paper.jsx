@@ -1,18 +1,19 @@
 import { doc, getDoc } from "firebase/firestore"
 import { useEffect, useState } from "react"
-// import { paper } from "../data"
+// import { papers, publish } from "../data"
 import { Link } from "react-router-dom"
 import { db } from "../auth/firebase"
 
 export const Paper = ({ paperID }) => {
-    const [loading, setLoading] = useState(false)
+
     const [paper, setPaper] = useState()
+    const [loading, setLoading] = useState(false)
 
 
     useEffect(() => {
 
         const fetchData = async () => {
-
+            setLoading(true)
             try {
                 const querry = await getDoc(doc(db, 'paper', paperID))
                 if (querry.exists()) {
@@ -22,7 +23,10 @@ export const Paper = ({ paperID }) => {
                     return
                 }
             } catch (error) {
+                console.log(error);
                 return
+            } finally {
+                setLoading(false)
             }
         }
 
@@ -30,44 +34,53 @@ export const Paper = ({ paperID }) => {
     }, [])
 
 
-
+    if (loading) {
+        return (
+            <div class="card" aria-hidden="true" className="min-w-[23vw] max-w-[300px] h-[300px] rounded shadow-[0_0_5px_var(--text-2)]">
+                {/* <img src="..." class="card-img-top" alt="..." /> */}
+                <div class="card-body">
+                    <h5 class="card-title placeholder-glow">
+                        <span class="placeholder col-6"></span>
+                    </h5>
+                    <p class="card-text placeholder-glow">
+                        <span class="placeholder col-7"></span>
+                        <span class="placeholder col-4"></span>
+                        <span class="placeholder col-4"></span>
+                        <span class="placeholder col-6"></span>
+                        <span class="placeholder col-8"></span>
+                    </p>
+                    <a class="btn btn-primary disabled placeholder col-6" aria-disabled="true"></a>
+                </div>
+            </div>
+        )
+    }
     if (!paper) return
 
     return (
         <Link
             className="text-[var(--text-color)] 
-            hover:shadow-[0_0_15px_var(--text-2)]
+            hover:shadow-[0_0_15px_var(--text-2)] 
             shadow-[0_0_5px_var(--text-2)] 
-            bg-[var(--box-color)]
-            
-            "
-            to={`/publications/${paper?.id}`}
-            style={{
-                minWidth: '300px',
-                margin: 10,
-                borderRadius: 10,
-                maxWidth: '23vw',
-            }}>
-            <img src={paper?.images[0]} alt=""
+            bg-[var(--box-color)] rounded overflow- min-w-[23vw] max-w-[300px] m-2"
+            to={`/papiers/${paper?.id}`}>
+            <img src={paper?.image} alt=""
                 style={{
                     height: 300,
                     width: '100%',
                     objectFit: 'cover',
                     alignSelf: "center",
                     justifySelf: 'center',
+                    // borderRadius : '10px',
                     borderTopLeftRadius: '10px',
                     borderTopRightRadius: '10px'
                 }} />
-            <div className="pl-2"
-                style={{
-                    textOverflow: 'ellipsis',
-                    overflow: 'hidden',
-                    whiteSpace: 'nowrap'
-                }}>{paper?.name}</div>
-            <div className="mt-2">
-                <span className="text-[var(--text-2)] pl-5">{paper?.type} | </span>
-                <span className="text-[var(--text-2)]">{paper?.year}</span>
+            <div className="p-2 line-clamp-1">
+                {paper?.name}
             </div>
-        </Link >
+            <div className="pl-2 pb-2">
+                <span className="text-[var(--text-2)]">{paper?.startDate} </span>
+                {paper?.endDate !== paper?.startDate && <span className="text-[var(--text-2)]">- {paper?.endDate}</span>}
+            </div>
+        </Link>
     )
 }
