@@ -1,8 +1,9 @@
 import { Link, NavLink } from "react-router-dom";
-import { user } from "../data";
 import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import './css/smallBar.scss'
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../auth/firebase";
 
 const SmallBar = () => {
   const [theme, setTheme] = useState(
@@ -24,6 +25,33 @@ const SmallBar = () => {
 
   const [showMenu, setShowMenu] = useState(false);
 
+  const [user, setUser] = useState()
+  const [loading, setLoading] = useState(false)
+
+
+  useEffect(() => {
+    const fectData = async () => {
+      setLoading(true)
+      try {
+        const snap = await getDocs(collection(db, "user"))
+        const data = snap.docs.map(doc => ({
+          id: doc.id,
+          ...doc.data()
+        }))
+        setUser(data[0])
+
+      } catch (error) {
+        console.log(error);
+
+        return
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    fectData()
+  }, [])
+
   return (
     <div className="small-bar h-[75px] bg-[var(--app-bar-bg)] fixed w-[100vw]">
       <div className="h-[100%] flex items-center justify-between">
@@ -31,7 +59,7 @@ const SmallBar = () => {
           to={"/"}
           className="profile ml-[15px] border-2 border-solid border-[var(--primary-color-reverse)] rounded-full"
         >
-          {user.images ? (
+          {user?.image ? (
             <img
               style={{
                 objectFit: "cover",
@@ -40,7 +68,7 @@ const SmallBar = () => {
                 height: 45,
                 width: 45,
               }}
-              src={user.images[0]}
+              src={user?.image}
               alt=""
             />
           ) : (
@@ -95,7 +123,7 @@ const SmallBar = () => {
               </NavLink>
             </div>
             <div className="more flex">
-              <Link to={user.linkedin} target="_">
+              <Link to={user?.linkedin} target="_">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -113,7 +141,7 @@ const SmallBar = () => {
                   <circle cx="4" cy="4" r="2" />
                 </svg>
               </Link>
-              <Link to={user.github} target="_">
+              <Link to={user?.github} target="_">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"

@@ -70,7 +70,7 @@ const Home = () => {
       <section className="last-projects-papiers flex flex-wrap pt-4">
         {
           projects.length > 0 &&
-          <div className="flex justify-center items-center flex-col">
+          <div className="flex justify-center items-center flex-col mt-5">
             <span className="border-l-3 border-red-500 text-4xl mb-2">Last projects</span>
             <Project projectID={projects[projects?.length - 1]?.id}></Project>
             <MyButton goTo={"/projects"} name={"See more projects"} />
@@ -79,7 +79,7 @@ const Home = () => {
 
         {
           papers.length > 0 &&
-          < div className="flex justify-center items-center flex-col ml-4">
+          < div className="flex justify-center items-center flex-col ml-4 mt-5">
             <span className="border-l-3 border-red-500 text-4xl mb-2">Last papers</span>
             <Paper paperID={papers[papers?.length - 1]?.id}></Paper>
             <MyButton name={"See more papers"} goTo={"/papiers"} />

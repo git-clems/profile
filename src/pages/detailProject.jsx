@@ -1,10 +1,10 @@
 import { useParams } from "react-router-dom"
-// import { projects } from "../data";
 import "./css/details-page.scss"
 import { useEffect, useState } from "react";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../auth/firebase";
 import Loading from "../components/loadingPage";
+import Page404 from "./404";
 
 const DetailsProject = () => {
     const params = useParams()
@@ -30,10 +30,10 @@ const DetailsProject = () => {
         }
 
         fetchData()
-    }, [])    
+    }, [])
 
-    if(loading) return <Loading></Loading>
-    if(!project) return
+    if (loading) return <Loading></Loading>
+    if (!project) return <Page404 prev={'Go back to projects'} prevLink={"/projects"} message={"Project not found !"}></Page404>
 
     return (
         <div className="page details-page">
@@ -49,19 +49,8 @@ const DetailsProject = () => {
                         </div>
                     </div>
                 </div>
-                <div style={{
-                    margin: '5px'
-                }}>
-                    <img
-                        style={{
-                            maxWidth: '30vw',
-                            minWidth: '300px',
-                            width: '50vw',
-                            borderRadius: 7,
-                            border: '1px solid'
-                        }}
-                        src={project?.image} alt={project?.name}
-                    />
+                <div className="m-3">
+                    <img className="max-w-[30vw] min-w-[300px] w-[50vw] rounded-md border" src={project?.image} alt={project?.name} />
                 </div>
             </div>
         </div >

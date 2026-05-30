@@ -40,7 +40,7 @@ const Papers = () => {
     return (
         <div className="page papers-page" >
             <div>
-                <div className="text-xl font-bold m-4">My papers</div>
+                <div className="text-4xl font-bold m-4">My papers</div>
                 <div className="flex flex-wrap">
                     {papers.map(paper => (<Paper key={paper?.id} paperID={paper.id} />))}
                 </div>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { Project } from "../components/project"
-import { projects } from "../data"
+// import { projects } from "../data"
 import { collection, getDocs } from "firebase/firestore"
 import { db } from "../auth/firebase"
 import Loading from "../components/loadingPage"
@@ -41,7 +41,7 @@ const Projects = () => {
     return (
         <div className="page projects-page" >
             <div>
-                <div className="text-xl font-bold m-4">My projects</div>
+                <div className="text-4xl font-bold m-4">My projects</div>
                 <div className="flex flex-wrap">
                     {projects.map(project => (<Project key={project?.id} projectID={project.id} />))}
                 </div>

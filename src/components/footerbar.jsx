@@ -1,5 +1,4 @@
 import { Copyright, Linkedin, Locate, MapPin } from "lucide-react"
-import { web } from "../data"
 import { Link } from "react-router-dom"
 import { collection, getDocs } from "firebase/firestore"
 import { db } from "../auth/firebase"
@@ -48,7 +47,7 @@ export const FooterBar = () => {
                     flexDirection: 'column'
                 }}>
                 <span className="flex items-center">
-                    <Copyright strokeWidth={'1px'} height={20} width={20}></Copyright> {web.year} {user.fname} {user.lname}
+                    <Copyright strokeWidth={'1px'} height={20} width={20}></Copyright>2026 {user.fname} {user.lname}
                 </span>
                 <span className="flex mt-2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin-icon lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect width="4" height="12" x="2" y="9" /><circle cx="4" cy="4" r="2" /></svg>

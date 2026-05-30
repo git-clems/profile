@@ -4,7 +4,6 @@ import { useEffect, useState } from "react"
 import { collection, getDocs } from "firebase/firestore"
 import Loading from "./loadingPage"
 import { db } from "../auth/firebase"
-// import { user } from "../data"
 
 const AppBar = () => {
 
@@ -22,14 +21,14 @@ const AppBar = () => {
                 const data = snap.docs.map(doc => ({
                     id: doc.id,
                     ...doc.data()
-                }))                
+                }))
                 setUser(data[0])
 
             } catch (error) {
                 console.log(error);
-                
+
                 return
-            }finally {
+            } finally {
                 setLoading(false)
             }
         }
@@ -38,7 +37,7 @@ const AppBar = () => {
     }, [])
 
     // console.log(user);
-    
+
 
 
     const [showAppBar, setShowAppBar] = useState(true);
@@ -86,8 +85,8 @@ const AppBar = () => {
         };
     }, [lastScrollY]);
 
-    if(loading) return <Loading></Loading>
-    if(!user) return
+    if (loading) return <Loading></Loading>
+    if (!user) return
 
     return (
         // <div className="appbar shadow-[0_0_15px_rgba(0,0,0,0.5)]">

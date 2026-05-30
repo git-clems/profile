@@ -7,7 +7,7 @@ import About from './pages/about'
 import Contact from './pages/contact'
 import { FooterBar } from './components/footerbar'
 import DetailsProject from './pages/detailProject'
-import DetailsPublication from './pages/detailPaper'
+import DetailsPaper from './pages/detailPaper'
 import Papers from './pages/papers'
 import ScrollToTop from './components/goTop'
 import SmallBar from './components/smallBar'
@@ -29,7 +29,7 @@ function App() {
         <Route path='papiers' element={<Papers></Papers>}></Route>
         <Route path='about-me' element={<About></About>}></Route>
         <Route path='projects/:id' element={<DetailsProject></DetailsProject>}></Route>
-        <Route path='papiers/:id' element={<DetailsPublication></DetailsPublication>}></Route>
+        <Route path='papiers/:id' element={<DetailsPaper></DetailsPaper>}></Route>
         <Route path='contact' element={<Contact></Contact>}></Route>
         <Route path='admin' element={<Admin></Admin>}></Route>
         <Route path='admin/messagerie' element={<AdminContacts></AdminContacts>}></Route>

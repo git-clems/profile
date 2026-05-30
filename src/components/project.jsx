@@ -36,8 +36,7 @@ export const Project = ({ projectID }) => {
 
     if (loading) {
         return (
-            <div class="card" aria-hidden="true" className="min-w-[23vw] max-w-[300px] h-[300px] rounded shadow-[0_0_5px_var(--text-2)]">
-                {/* <img src="..." class="card-img-top" alt="..." /> */}
+            <div class="card" aria-hidden="true" className="min-w-[23vw] max-w-[300px] h-[300px] mt-2 rounded shadow-[0_0_5px_var(--text-2)]">
                 <div class="card-body">
                     <h5 class="card-title placeholder-glow">
                         <span class="placeholder col-6"></span>
@@ -63,23 +62,13 @@ export const Project = ({ projectID }) => {
             shadow-[0_0_5px_var(--text-2)] 
             bg-[var(--box-color)] rounded overflow-hidden min-w-[23vw] max-w-[300px] m-2"
             to={`/projects/${project?.id}`}>
-            <img src={project?.image} alt=""
-                style={{
-                    height: 300,
-                    width: '100%',
-                    objectFit: 'cover',
-                    alignSelf: "center",
-                    justifySelf: 'center',
-                    // borderRadius : '10px',
-                    borderTopLeftRadius: '10px',
-                    borderTopRightRadius: '10px'
-                }} />
-            <div className="p-2 line-clamp-1">
+            <img src={project?.image} alt="" className="h-[300px] w-[100%] object-cover self-center" />
+            <div className="p-2 truncate">
                 {project?.name}
             </div>
             <div className="pl-2 pb-2">
                 <span className="text-[var(--text-2)]">{project?.startDate} </span>
-                {project?.endDate !== project?.startDate && <span className="text-[var(--text-2)]">- {project?.endDate}</span>}
+                {(project?.endDate && project?.endDate !== project?.startDate) && <span className="text-[var(--text-2)]">- {project?.endDate}</span>}
             </div>
         </Link>
     )
