@@ -2,9 +2,8 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import LayoutAdmin from '../components/layoutAdmin'
 import { collection, doc, getDoc, getDocs, onSnapshot, Timestamp } from 'firebase/firestore'
 import { db } from '../auth/firebase'
-// import Loading from '../components/LoadingPage'
-// import { useAuth } from '../auth/AuthContext'
 import Loading from './../components/loadingPage'
+import { Power } from 'lucide-react'
 
 
 
@@ -162,7 +161,7 @@ const Admin = () => {
                     </div>
                 </div>
                 <button className='btn btn-danger' >
-                    <i class="fa-solid fa-power-off"></i>
+                    <Power/>
                 </button>
             </div>
             <div className="flex flex-wrap max-[800px]:justify-center">

@@ -1,8 +1,4 @@
-// import { collection, doc, Firestore, getDoc, getFirestore } from "firebase/firestore"
-// import { app } from "../../firebase"
-// import { useState } from "react"
 import "./css/home.scss";
-// import { user, speciality, projects, publish } from "../data.jsx";
 import { Project } from "../components/project.jsx";
 import { Paper } from "../components/paper.jsx";
 import { Link } from "react-router-dom";
@@ -11,6 +7,7 @@ import { collection, getDocs } from "firebase/firestore";
 import { db } from "../auth/firebase.jsx";
 import { useEffect, useState } from "react";
 import Loading from "../components/loadingPage.jsx";
+import { Phone } from "lucide-react";
 
 const Home = () => {
 
@@ -67,10 +64,10 @@ const Home = () => {
         </div>
       </header>
 
-      <section className="last-projects-papiers flex flex-wrap pt-4">
-        {
-          projects.length > 0 &&
-          <div className="flex justify-center items-center flex-col mt-5">
+      <section className="flex flex-wrap">
+
+        {projects?.length > 0 &&
+          <div className="flex items-center flex-col mt-5">
             <span className="border-l-3 border-red-500 text-4xl mb-2">Last projects</span>
             <Project projectID={projects[projects?.length - 1]?.id}></Project>
             <MyButton goTo={"/projects"} name={"See more projects"} />
@@ -78,14 +75,19 @@ const Home = () => {
         }
 
         {
-          papers.length > 0 &&
-          < div className="flex justify-center items-center flex-col ml-4 mt-5">
+          papers?.length > 0 &&
+          < div className="flex items-center flex-col ml-4 mt-5">
             <span className="border-l-3 border-red-500 text-4xl mb-2">Last papers</span>
             <Paper paperID={papers[papers?.length - 1]?.id}></Paper>
             <MyButton name={"See more papers"} goTo={"/papiers"} />
           </div>
         }
       </section >
+
+      <section className="mt-5 flex flex-wrap justify-center items-center">
+        <div className="mr-5 text-3xl text-center font-bold text-[var(--text-color)]">Would you like to take on some challenges together ? </div>
+        <MyButton goTo={'/contact'} name={"Contactez moi ici"}> <Phone /></MyButton>
+      </section>
     </div >
   );
 };

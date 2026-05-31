@@ -89,8 +89,6 @@ const AppBar = () => {
     if (!user) return
 
     return (
-        // <div className="appbar shadow-[0_0_15px_rgba(0,0,0,0.5)]">
-
         <div className={`
         appbar fixed top-0 left-0 h-[80px] z-50 
         
@@ -99,19 +97,19 @@ const AppBar = () => {
         ${showAppBar ? 'translate-y-0' : '-translate-y-full'}
         ${hasShadow ? 'shadow-md' : ''}
       `}>
-            <Link to={'/'} className='profile bg-[white]' style={{ overflow: 'hidden' }}>
+            <Link to={'/'} className='profile bg-[white] border-[var(--primary-color-reverse)] border-2' style={{ overflow: 'hidden' }}>
                 {
                     user?.image
                         ? <img src={user?.image} alt="" className="object-cover" />
                         : <span className="">BC</span>
                 }
             </Link>
-            <div className='nav-container'>
-                <NavLink to={'/'} className='nav-element'>Home</NavLink>
-                <NavLink to={'/projects'} className='nav-element'>Projects</NavLink>
-                <NavLink to={'/papiers'} className='nav-element'>Publications</NavLink>
-                <NavLink to={'/about-me'} className='nav-element'>About</NavLink>
-                <NavLink to={'/contact'} className='nav-element'>Contact</NavLink>
+            <div className='nav-container border-[var(--primary-color-reverse)] border-2 rounded-full'>
+                <NavLink to={'/'} className='nav-element font-bold'>Home</NavLink>
+                <NavLink to={'/projects'} className='nav-element font-bold'>Projects</NavLink>
+                <NavLink to={'/papiers'} className='nav-element font-bold'>Papers</NavLink>
+                <NavLink to={'/about-me'} className='nav-element font-bold'>About</NavLink>
+                <NavLink to={'/contact'} className='nav-element font-bold'>Contact</NavLink>
             </div>
             <div className="more flex">
                 <Link to={user?.linkedin} target="_">

@@ -16,7 +16,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        border: 2px solid var(--primary-color-reverse);
+        // border: 2px solid var(--primary-color-reverse);
         border-radius: 50px;
         margin-left: 15px;
         margin-right: 15px;
@@ -42,6 +42,7 @@
             margin-top: 5px;
             margin-bottom: 5px;
             flex: 1;
+            font-style: bold;
             // color: black;
             &:hover {
                 background-color: rgba(6, 144, 159, 0.914);

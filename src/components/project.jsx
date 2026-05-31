@@ -36,7 +36,7 @@ export const Project = ({ projectID }) => {
 
     if (loading) {
         return (
-            <div class="card" aria-hidden="true" className="min-w-[23vw] max-w-[300px] h-[300px] mt-2 rounded shadow-[0_0_5px_var(--text-2)]">
+            <div class="card" aria-hidden="true" className="min-w-[23vw] max-w-[300px] h-[300px] rounded shadow-[0_0_5px_var(--text-2)]">
                 <div class="card-body">
                     <h5 class="card-title placeholder-glow">
                         <span class="placeholder col-6"></span>

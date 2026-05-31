@@ -63,7 +63,7 @@ export const Paper = ({ paperID }) => {
             to={`/papiers/${paper?.id}`}>
             <img src={paper?.image} alt="" className="h-[300px] w-[100%] object-cover self-center" />
             <div className="p-2 truncate">
-                {paper?.name}
+                {paper?.title}
             </div>
             <div className="pl-2 pb-2">
                 <span className="text-[var(--text-2)]">{paper?.year}</span>

@@ -4,7 +4,6 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
-        // align-items: center;
 
         .description {
             flex: 1;
@@ -18,15 +17,6 @@
             }
         }
 
-        // .profile {
-        //     // margin: 10px;
-        //     // width: 300px;
-        //     img {
-        //         border-radius: 10px;
-        //         background-color: rgba(246, 246, 246, 0.979);
-        //         background-size: cover;
-        //     }
-        // }
     }
 }
 
@@ -34,7 +24,6 @@
     .home-page {
 
         header {
-            // flex-direction: column;
 
             .description {
                 transition: 0.2s;
@@ -42,7 +31,6 @@
 
 
                 .user-name {
-                    // font-size: 25px;
                     transition: 0.2s;
                 }
 
@@ -60,12 +48,6 @@
                 img {
                     width: 100%;
                 }
-            }
-        }
-
-        .last-projects-papiers {
-            .last-papiers {
-                margin-top: 50px;
             }
         }
     }

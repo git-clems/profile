@@ -15,12 +15,11 @@ const Contact = () => {
 
   const handleErrors = () => {
     const newError = {}
-    if (!contact.city) newError.city = "Entrez votre ville de résidence"
-    if (!contact.country?.trim()) newError.country = "Entrez votre pays de résidence"
     if (!contact.email?.trim()) newError.email = "Entrez votre courriel"
     if (!contact.fname?.trim()) newError.fname = "Entrez votre prénom"
     if (!contact.lname?.trim()) newError.lname = "Entrez votre nom de famille"
     if (!contact.message?.trim()) newError.message = "Entrez votre message"
+    if (!contact.object?.trim()) newError.message = "choisir un objet"
 
     setErrors(newError)
 
@@ -55,14 +54,13 @@ const Contact = () => {
       <div className="page flex justify-center">
         <div className="w-full max-w-[700px] mt-5 mb-5">
           <div ref={recapRef} style={{ backgroundColor: 'white', borderColor: 'gray' }} className="w-full max-w-[700px] border overflow-hidden rounded-md">
-            <div style={{ backgroundColor: 'green', color: "white" }} className="p-3 flex justify-between">
+            <div className="p-3 flex justify-between bg-blue-200 text-black">
               <div>
                 <h3>Message envoyé</h3>
                 <p className="mt-1 opacity-90">
                   Votre message a bien été transmis.
                 </p>
               </div>
-              <img src="/logo/logo.png" alt="" className='h-[100px] w-[100px] rounded-md' />
             </div>
 
             <div className="p-2">
@@ -108,13 +106,13 @@ const Contact = () => {
             </div>
           </div>
           <div className="mt-6 flex justify-between">
-            <button
+            {/* <button
               type="button"
               onClick={downloadPDF}
               className="btn btn-secondary m-2"
             >
               Télécharger en PDF <i class="fa-solid fa-download"></i>
-            </button>
+            </button> */}
 
             <button
               type="button"
@@ -177,15 +175,18 @@ const Contact = () => {
           </div>
 
           <div className="min-w-[300px] m-1 mt-3 flex-1">
-            <label htmlFor="" className="form-label">Objet <span className='text-red-500'> * </span>  </label>
-            {!objectCheck ?
-              <select class="form-select" autocomplete="object" id="object" onChange={inputHandler} name="object">
-                <option value="">Choisir un objet</option>
-                <option value="Renseignement">Renseignement</option>
-                <option value="Partenariat">Partenariat</option>
-                <option value="Devenir membre">Devenir membre</option>
-              </select> :
-              <input type="text" onChange={inputHandler} className="form-control" id="object" name='object' placeholder="Inserez l'objet de votre message" />
+            <div className='flex justify-between'>
+              <label htmlFor="" className="form-label">Objet <span className='text-red-500'> * </span>  </label>
+              {errors?.object && (<span className='text-red-500'>{errors?.object}</span>)}
+            </div>
+            {
+              !objectCheck ?
+                <select class="form-select" autocomplete="object" id="object" onChange={inputHandler} name="object">
+                  <option value="">Choisir un objet</option>
+                  <option value="Partenariat">Partenariat</option>
+                  <option value="Offre de poste">Offre de poste</option>
+                </select> :
+                <input type="text" onChange={inputHandler} className="form-control" id="object" name='object' placeholder="Inserez l'objet de votre message" />
             }
             <div className="flex m-1 mt-3 items-start">
               <input className="form-check-input mt-1" type="checkbox" id="checkDefault" onChange={() => setObjectCheck(!objectCheck)} />

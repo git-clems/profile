@@ -93,31 +93,31 @@ const SmallBar = () => {
             <div className="flex flex-col items-center justify-center">
               <NavLink
                 to={"/"}
-                className="nav-element hover:text-[var(--primary-color)]"
+                className="nav-element font-bold hover:text-[var(--primary-color)]"
               >
                 Home
               </NavLink>
               <NavLink
                 to={"/projects"}
-                className="nav-element hover:text-[var(--primary-color)]"
+                className="nav-element font-bold hover:text-[var(--primary-color)]"
               >
                 Projects
               </NavLink>
               <NavLink
                 to={"/publications"}
-                className="nav-element hover:text-[var(--primary-color)]"
+                className="nav-element font-bold hover:text-[var(--primary-color)]"
               >
-                Publications
+                Papers
               </NavLink>
               <NavLink
                 to={"/about-me"}
-                className="nav-element hover:text-[var(--primary-color)]"
+                className="nav-element font-bold hover:text-[var(--primary-color)]"
               >
                 About
               </NavLink>
               <NavLink
                 to={"/contact"}
-                className="nav-element hover:text-[var(--primary-color)]"
+                className="nav-element font-bold hover:text-[var(--primary-color)]"
               >
                 Contact
               </NavLink>

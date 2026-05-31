@@ -5,6 +5,7 @@ import { db } from '../auth/firebase'
 import Loading from '../components/LoadingPage'
 import Page404 from '../pages/404'
 import { MyDateFormat } from './admin'
+import { Trash } from 'lucide-react'
 
 
 
@@ -88,7 +89,7 @@ const AdminContacts = () => {
             </form>
           </div>
 
-          <table class="flex-1 w-full text-sm">
+          <table class="flex-1 w-full text-sm bg-white">
             <thead className='bg-gray-600 text-white'>
               <tr className='w-full'>
                 <th scope="col" className="p-2">#</th>
@@ -114,7 +115,7 @@ const AdminContacts = () => {
             {
               !contacts?.length
                 ? <div className='flex justify-center items-center w-full h-[80vh]'>Aucun message</div>
-                : <tbody>
+                : <tbody className=''>
                   {
                     filteredContact.sort((a, b) => {
                       if (sortByDate === true) {
@@ -135,9 +136,10 @@ const AdminContacts = () => {
                           navigate(`/admin/messagerie/${contact?._id}`)
                           ToogleOppened(contact._id)
                         }}
-
-                        // className={`cursor-pointer hover:bg-blue-100 transition border ${contact?.opened && 'font-bold'}`}
-                        className={`cursor-pointer hover:bg-yellow-50 transition border ${contact?.opened && 'bg-gray-100'}`}
+                        // style={{
+                        //   backgroundColor : 'var(--app-bar-bg)'
+                        // }}
+                        className={`text-black cursor-pointer hover:bg-gray-100 transition border ${contact?.opened && 'bg-blue-100'}`}
                       >
                         <th scope="row" className='p-2'>{index + 1}</th>
                         <td className='p-2 bg-red-00'>
@@ -151,11 +153,12 @@ const AdminContacts = () => {
                           {MyDateFormat(contact.contactDate)}
                         </td>
                         <td>
-                          <button onClick={(e) => {
-                            e.stopPropagation()
-                            deleteContact(contact._id)
-                          }} className="m-2 h-[22px] w-[22px] max-[600px]:h-[35px] max-[600px]:w-[35px] flex justify-center items-center bg-[red] hover:bg-red-400 rounded-1 text-[white]">
-                            <i class="fa-solid fa-trash"></i>
+                          <button className='btn btn-danger m-1'
+                            onClick={(e) => {
+                              e.stopPropagation()
+                              deleteContact(contact._id)
+                            }}>
+                            <Trash></Trash>
                           </button>
                         </td>
                       </tr>
