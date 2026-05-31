@@ -2,7 +2,8 @@
 /* @import '~bootstrap/scss/bootstrap'; */
 
 #root {
-    font-family: "Roboto", sans-serif;
+    /* font-family: "Roboto", sans-serif; */
+    font-family: "Roboto Condensed", sans-serif;
     margin: 0;
     padding: 0;
 }

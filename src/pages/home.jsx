@@ -15,7 +15,7 @@ const Home = () => {
   const [projects, setProjects] = useState()
   const [papers, setPapers] = useState()
   const [specialities, setSpecialities] = useState()
-  const [loading, setLoading] = useState()
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
 
