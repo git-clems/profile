@@ -51,7 +51,7 @@ const Home = () => {
   return (
     <div className="page home-page">
       <header>
-        <div className="description">
+        <div className="description bg-[var(--app-bar-bg)] shadow-[0_0_25px_rgb(0,0,0,0.5)]">
           <span className="user-name text-[var(--text-color)] font-bold" >{user?.lname} {user?.fname}</span>
           <p className="text-[var(--text-2)] rounded">{user?.description}</p>
           <div className="speciality-content mt-3 flex flex-wrap">

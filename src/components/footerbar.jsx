@@ -35,12 +35,11 @@ export const FooterBar = () => {
     if (!user) return
 
     return (
-        <footer className='flex justify-between flex-wrap'
+        <footer className='flex justify-between flex-wrap bg-[var(--app-bar-bg))]'
             style={{
                 borderTop: '1px solid grey',
                 padding: '15px',
                 marginTop: '50px',
-                backgroundColor: 'rgba(0, 0, 0, 0.09)'
             }}>
             <div className="flex"
                 style={{

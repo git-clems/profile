@@ -140,7 +140,7 @@ const Contact = () => {
         <h5 className="ml-3 mr-3">Vous souhaitez nous contacter ?</h5>
 
         <p className='ml-3 mb-3 text-[var(--text-2)]'>Les champs marqué par <span className='text-red-500'> * </span> sont obligatoires.</p>
-        <form action="" className='min-[800px]:border-3 border-gray-300 rounded-md min-[600px]:p-4 max-[600px]:p-2 pt-0' onSubmit={HandleSubmit}>
+        <form action="" className='min-[800px]:border-3 bg-[var(--app-bar-bg)] border-gray-300 rounded-md min-[600px]:p-4 max-[600px]:p-2 pt-0' onSubmit={HandleSubmit}>
           <div className="flex mb-3 justify-between flex-wrap">
             <div className="min-w-[300px] m-1 mt-3 flex-1">
               <div className='flex justify-between'>

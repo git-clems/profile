@@ -54,10 +54,10 @@ const SmallBar = () => {
 
   return (
     <div className="small-bar h-[75px] bg-[var(--app-bar-bg)] fixed w-[100vw]">
-      <div className="h-[100%] flex items-center justify-between">
+      <div className="h-full pl-5 pr-5 flex items-center justify-between">
         <Link
           to={"/"}
-          className="profile ml-[15px] border-2 border-solid border-[var(--primary-color-reverse)] rounded-full"
+          className="profile border-2 border-solid border-[var(--primary-color-reverse)] rounded-full"
         >
           {user?.image ? (
             <img
@@ -77,7 +77,7 @@ const SmallBar = () => {
         </Link>
 
         <button
-          className="mr-[25px] cursor-pointer"
+          className="cursor-pointer"
           onClick={() => setShowMenu(!showMenu)}
         >
           {showMenu ? (
@@ -89,8 +89,8 @@ const SmallBar = () => {
       </div>
       <div>
         {showMenu && (
-          <div className="menu absolute right-[67px] top-5 bg-[var(--primary-color-reverse)] text-[var(--box-color)] rounded-lg">
-            <div className="flex flex-col items-center justify-center">
+          <div className="menu absolute right-[70px] top-5 shadow-[0_0_15px_rgba(0,0,0,0.5)] min-w-[250px] bg-[var(--primary-color-reverse)] text-[var(--box-color)] rounded-lg">
+            <div className="flex pt-3 flex-col items-center justify-center">
               <NavLink
                 to={"/"}
                 className="nav-element font-bold hover:text-[var(--primary-color)]"
@@ -104,7 +104,7 @@ const SmallBar = () => {
                 Projects
               </NavLink>
               <NavLink
-                to={"/publications"}
+                to={"/papiers"}
                 className="nav-element font-bold hover:text-[var(--primary-color)]"
               >
                 Papers

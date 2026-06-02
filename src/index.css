@@ -17,9 +17,10 @@
     --background-color-2: rgb(0, 0, 79);
     color: white;
     --text-color: white;
-    --text-2: rgb(202, 202, 202);
+    --text-2: rgb(149, 220, 255);
     --box-color: black;
     --app-bar-bg: rgb(1, 12, 52);
+    background-image: url('/src/assets/bg/dark-bg.jpg');
 }
 
 .light {
@@ -32,8 +33,9 @@
     color: black;
     --text-color: black;
     --box-color: white;
-    --text-2: rgb(120, 120, 120);
+    --text-2: rgb(123, 128, 131);
     
+    background-image: url('/src/assets/bg/light-bg.jpg');
     /* --primary-color : rgb(255, 255, 255); */
 }
 

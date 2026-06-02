@@ -61,7 +61,7 @@ const DetailsPaper = () => {
                     </p>
 
                     <span className="font-bold mr-2">Keywords:</span>
-                    <div className="flex flex--wrap">
+                    <div className="flex flex-wrap">
                         {paper?.keywords?.map(key =>
                             <span className="bg-blue-100 m-1 p-1 text-nowrap rounded text-black">{key}</span>
                         )}
