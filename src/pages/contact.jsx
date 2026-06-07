@@ -3,6 +3,7 @@ import Loading from '../components/LoadingPage'
 import { addDoc, collection, doc, Timestamp } from 'firebase/firestore'
 import { db } from '../auth/firebase'
 import { useNavigate } from 'react-router'
+import { SendHorizontal } from 'lucide-react'
 
 const Contact = () => {
   const recapRef = useRef()
@@ -137,25 +138,25 @@ const Contact = () => {
   return (
     <div className="page flex justify-center">
       <div className="max-w-[800px] mb-5 mt-5">
-        <h5 className="ml-3 mr-3">Vous souhaitez nous contacter ?</h5>
+        <h5 className="ml-3 mr-3">Would you like to contact me?</h5>
 
-        <p className='ml-3 mb-3 text-[var(--text-2)]'>Les champs marqué par <span className='text-red-500'> * </span> sont obligatoires.</p>
+        <p className='ml-3 mb-3 text-[var(--text-2)]'>Fields marked with <span className="text-red-500"> * </span> are required.</p>
         <form action="" className='min-[800px]:border-3 bg-[var(--app-bar-bg)] border-gray-300 rounded-md min-[600px]:p-4 max-[600px]:p-2 pt-0' onSubmit={HandleSubmit}>
           <div className="flex mb-3 justify-between flex-wrap">
             <div className="min-w-[300px] m-1 mt-3 flex-1">
               <div className='flex justify-between'>
-                <label htmlFor="" className="form-label">Nom <span className='text-red-500'> * </span>  </label>
+                <label htmlFor="" className="form-label">Last name <span className='text-red-500'> * </span>  </label>
                 {errors?.lname && (<span className='text-red-500'>{errors?.lname}</span>)}
               </div>
-              <input type="text" onChange={inputHandler} className="form-control" name='lname' id="nom" />
+              <input type="text" onChange={inputHandler} className="form-control" placeholder='THOMSON' name='lname' id="nom" />
             </div>
 
             <div className="min-w-[300px] m-1 mt-3 flex-1">
               <div className='flex justify-between'>
-                <label htmlFor="" className="form-label">Prénoms(s) <span className='text-red-500'> * </span>  </label>
+                <label htmlFor="" className="form-label">First name <span className='text-red-500'> * </span>  </label>
                 {errors?.fname && (<span className='text-red-500'>{errors?.fname}</span>)}
               </div>
-              <input type="text" onChange={inputHandler} className="form-control" name='fname' id="prenom" />
+              <input type="text" onChange={inputHandler} className="form-control" placeholder="Karl" name='fname' id="prenom" />
             </div>
           </div>
 
@@ -169,37 +170,37 @@ const Contact = () => {
             </div>
 
             <div className="min-w-[300px] m-1 mt-3 flex-1">
-              <label htmlFor="" className="form-label">Numéro de téléphone</label>
+              <label htmlFor="" className="form-label">Tel</label>
               <input type="tel" onChange={inputHandler} className="form-control" id="telephone" name='tel' placeholder="+123 11 22 33 44" />
             </div>
           </div>
 
           <div className="min-w-[300px] m-1 mt-3 flex-1">
             <div className='flex justify-between'>
-              <label htmlFor="" className="form-label">Objet <span className='text-red-500'> * </span>  </label>
+              <label htmlFor="" className="form-label">Object <span className='text-red-500'> * </span>  </label>
               {errors?.object && (<span className='text-red-500'>{errors?.object}</span>)}
             </div>
             {
               !objectCheck ?
                 <select class="form-select" autocomplete="object" id="object" onChange={inputHandler} name="object">
-                  <option value="">Choisir un objet</option>
-                  <option value="Partenariat">Partenariat</option>
-                  <option value="Offre de poste">Offre de poste</option>
+                  <option value="">Select an objcet</option>
+                  <option value="Partenariat">Partenerrship</option>
+                  <option value="Offre de poste">Offer a job</option>
                 </select> :
-                <input type="text" onChange={inputHandler} className="form-control" id="object" name='object' placeholder="Inserez l'objet de votre message" />
+                <input type="text" onChange={inputHandler} className="form-control" id="object" name='object' placeholder="Inser your object her" />
             }
             <div className="flex m-1 mt-3 items-start">
               <input className="form-check-input mt-1" type="checkbox" id="checkDefault" onChange={() => setObjectCheck(!objectCheck)} />
-              <label className="form-check-label ml-2 mr-2" htmlFor="" >Objet personnalisé  </label>
+              <label className="form-check-label ml-2 mr-2" htmlFor="" >Customize an object</label>
             </div>
           </div>
 
           <div className="min-w-[300px] m-1 mt-3 flex-1">
-            <label htmlFor="" className="form-label">Votre message <span className='text-red-500'> * </span>  </label>
-            <textarea onChange={inputHandler} className="form-control" id="message" name='message' rows="10" placeholder='Rédiger ici votre message' ></textarea>
+            <label htmlFor="" className="form-label">Message <span className='text-red-500'> * </span>  </label>
+            <textarea onChange={inputHandler} className="form-control" id="message" name='message' rows="10" placeholder='Insert your message here' ></textarea>
           </div>
 
-          <div className='flex justify-center m-1 mt-3'>
+          <div className='flex justify-center items-center m-1 mt-3'>
             <button type="submit" class="w-30 h-12 p-2 rounded bg-blue-500 text-white" >
               {
                 send ?
@@ -210,7 +211,8 @@ const Contact = () => {
                   </div> :
                   "Envoyer"
               }
-              <i className={`${send ? "hidden" : "ml-2 fa-solid fa-paper-plane"}`}></i>
+              <SendHorizontal />
+              {/* <i className={`${send ? "hidden" : "ml-2 fa-solid fa-paper-plane"}`}></i> */}
             </button>
           </div>
         </form>

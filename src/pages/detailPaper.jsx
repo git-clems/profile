@@ -41,40 +41,45 @@ const DetailsPaper = () => {
 
     return (
         <div className="page details-page">
-            <div className="flex justify-center flex-wrap">
-                <div className="description min-w-[300px]">
+            <div className="flex justify- flex-wrap">
+                <div className="description flex-1 min-[900px]:max-w-[70vw] min-w-[300px] duration-200">
                     <div className="name font-bold">{paper?.title}</div>
                     {paper?.authors?.map(author =>
-                        <span className={`${author.firstAuth && "font-bold text-[var(--primary-color-reverse)]"}`}>{author.name}; </span>
+                        <span className={`${author.firstAuth && "font-bold text-yellow-600"}`}>{author.name}<sup>{author.affiliation}</sup>; </span>
                     )}
-                    <div className="text-sm text-[var(--text-2)]">
-                        {paper?.journal} - {paper?.publisher}
+                    <br />
+                    <br />
+                    <div>
+                        {paper?.organization?.map((org, index) =>
+                            <p className="text-center font-bold"><sup>{index + 1}</sup>{org}</p>
+                        )}
                     </div>
-                    <div className="text-xs m-1">
-                        {<span className="bg-blue-100 mr-2 rounded p-1 text-black"> {paper?.type} </span>}
-                        <span> Published: {paper?.year}</span>
-                    </div>
+
                     <br />
                     <p className="text-justify">
                         <span className="font-bold">Abstract. </span>
                         {paper?.abstract}
                     </p>
 
-                    <span className="font-bold mr-2">Keywords:</span>
-                    <div className="flex flex-wrap">
-                        {paper?.keywords?.map(key =>
-                            <span className="bg-blue-100 m-1 p-1 text-nowrap rounded text-black">{key}</span>
-                        )}
-                    </div>
                 </div>
-                <div className="m-3 flex flex-wrap justify-between flex-1">
-                    <a className="bg-blue-300 hover:bg-blue-200 flex p-2 rounded text-black h-[max-content] cursor-pointer"
-                        href={paper?.link}
-                        download={paper?.link}
-                    >
-                        <span style={{ textWrap: "nowrap" }}>See the paper</span>
-                        <Eye className="ml-4"></Eye>
-                    </a>
+                <div className="m-3 flex-1">
+
+                    <div className="text-sm text-[var(--text-2)]">
+                        {paper?.journal} - {paper?.publisher}
+                    </div>
+
+                    <div className="text-sm m-1">
+                        {<span className="bg-green-100 mr-2 border-3 font-bold border-green-400 rounded p-1 text-green-600"> {paper?.type} </span>}
+                        <span> Published: {paper?.year}</span>
+                    </div>
+                    <div>
+                        <span className="font-bold mr-2">Keywords:</span>
+                        <div className="flex flex-wrap">
+                            {paper?.keywords?.map(key =>
+                                <span className="bg-blue-100 border-3 border-blue-400 m-1 p-1 text-sm text-nowrap rounded text-black">{key}</span>
+                            )}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div >

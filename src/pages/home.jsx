@@ -7,7 +7,7 @@ import { collection, getDocs } from "firebase/firestore";
 import { db } from "../auth/firebase.jsx";
 import { useEffect, useState } from "react";
 import Loading from "../components/loadingPage.jsx";
-import { Phone } from "lucide-react";
+import { Phone, SendHorizontal } from "lucide-react";
 
 const Home = () => {
 
@@ -51,11 +51,11 @@ const Home = () => {
   return (
     <div className="page home-page">
       <header>
-        <div className="description shadow-[0_0_5px_rgb(0,0,0,0.5)] bg-[var(--app-bar-bg)] ">
+        <div className="description shadow-[0_0_5px_var(--primary-color-reverse)] bg-[var(--app-bar-bg)] ">
           <span className="user-name text-[var(--text-color)] font-bold" >{user?.lname} {user?.fname}</span>
           <p className="text-[var(--text-2)] rounded">{user?.description}</p>
           <div className="speciality-content mt-3 flex flex-wrap">
-            {specialities?.map(speciality => (<span className="bg-[var(--primary-color-reverse)] ml-4 text-nowrap p-2 m-2 rounded text-[var(--box-color)]"> {speciality.name}</span>))}
+            {specialities?.map(speciality => (<span className="bg-[var(--primary-color-reverse)] ml-4 text-nowrap p-1 text-sm m-2 rounded text-[var(--box-color)]"> {speciality.name}</span>))}
           </div>
         </div>
 
@@ -86,7 +86,7 @@ const Home = () => {
 
       <section className="mt-5 flex flex-wrap justify-center items-center bg-[var(--app-bar-bg)] pt-5 pb-5">
         <div className="mr-5 text-3xl text-center font-bold text-[var(--text-color)]">Would you like to take on some challenges together ? </div>
-        <MyButton goTo={'/contact'} name={"Contactez moi ici"}> <Phone /></MyButton>
+        <MyButton goTo={'/contact'} name={"Contact me"}> <SendHorizontal /></MyButton>
       </section>
     </div >
   );

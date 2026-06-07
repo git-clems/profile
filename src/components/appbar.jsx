@@ -95,7 +95,7 @@ const AppBar = () => {
         select-none
         transition-all duration-300
         ${showAppBar ? 'translate-y-0' : '-translate-y-full'}
-        ${hasShadow ? 'shadow-md' : ''}
+        ${hasShadow ? 'shadow-[0_0_5px_var(--primary-color-reverse)]' : ''}
       `}>
             <Link to={'/'} className='profile bg-[white] border-[var(--primary-color-reverse)] border-2' style={{ overflow: 'hidden' }}>
                 {
