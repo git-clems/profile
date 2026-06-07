@@ -8,7 +8,7 @@ import Page404 from "./404";
 
 const DetailsProject = () => {
     const params = useParams()
-    const [project, setProject] = useState()
+    const [project, setProject] = useState({})
     const [loading, setLoading] = useState(false)
 
     useEffect(() => {

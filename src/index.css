@@ -20,7 +20,10 @@
     --text-2: rgb(149, 220, 255);
     --box-color: black;
     --app-bar-bg: rgb(1, 12, 52);
-    background-image: url('/src/assets/bg/dark-bg.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    /* background-image: url('/src/assets/bg/dark-bg.jpg'); */
+    /* background-repeat: ; */
 }
 
 .light {
@@ -34,8 +37,8 @@
     --text-color: black;
     --box-color: white;
     --text-2: rgb(123, 128, 131);
-    
-    background-image: url('/src/assets/bg/light-bg.jpg');
+
+    /* background-image: url('/src/assets/bg/light-bg.jpg'); */
     /* --primary-color : rgb(255, 255, 255); */
 }
 
@@ -45,6 +48,6 @@
 }
 
 a {
-  text-decoration: none;
-  color: var(--text-color);
+    text-decoration: none;
+    color: var(--text-color);
 }

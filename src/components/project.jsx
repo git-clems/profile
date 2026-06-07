@@ -58,8 +58,9 @@ export const Project = ({ projectID }) => {
     return (
         <Link
             className="text-[var(--text-color)] 
-            hover:shadow-[0_0_15px_var(--text-2)] 
-            shadow-[0_0_5px_var(--text-2)] 
+            hover:shadow-[0_0_25px_var(--text-2)] 
+            shadow-[0_0_5px_var(--text-2)]
+            duration-100 hover:scale-105 
             bg-[var(--box-color)] rounded overflow-hidden min-w-[23vw] max-w-[300px] m-2"
             to={`/projects/${project?.id}`}>
             <img src={project?.image} alt="" className="h-[300px] w-[100%] object-cover self-center" />

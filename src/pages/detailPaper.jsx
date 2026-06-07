@@ -10,7 +10,7 @@ import Page404 from '../pages/404'
 const DetailsPaper = () => {
 
     const params = useParams()
-    const [paper, setPaper] = useState()
+    const [paper, setPaper] = useState({})
     const [loading, setLoading] = useState(false)
 
 
@@ -51,7 +51,7 @@ const DetailsPaper = () => {
                         {paper?.journal} - {paper?.publisher}
                     </div>
                     <div className="text-xs m-1">
-                        {<span className="bg-blue-100 mr-2 rounded p-1"> {paper?.type} </span>}
+                        {<span className="bg-blue-100 mr-2 rounded p-1 text-black"> {paper?.type} </span>}
                         <span> Published: {paper?.year}</span>
                     </div>
                     <br />
